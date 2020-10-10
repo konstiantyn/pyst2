@@ -33,4 +33,4 @@ install:
   - pip install pytest
 # command to run tests
 script:
-  - pytest --cov=pyst2.coverage .
+  - pytest --cov=mymul .
