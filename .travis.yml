@@ -12,5 +12,5 @@ python:
 install:
   - pip install .
 # command to run tests
-#script:
-#  - pytest
+script:
+  - pytest
