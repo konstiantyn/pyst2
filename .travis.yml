@@ -24,6 +24,7 @@ before_install:
   #- pwd
   #- docker --version
   #- docker-compose --version
+  - ifconfig -a
   - docker-compose -f test/docker-compose.yml up -d
 
 
