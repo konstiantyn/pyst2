@@ -30,9 +30,13 @@ before_install:
 # command to install dependencies
 install:
   - pip install .
-  - pip install pytest
-  - pip install pytest-cov
+  - pip install coveralls 
+#  - pip install pytest-cov
 
 # command to run tests
 script:
   - pytest --cov=mymul .
+
+after_success:
+  - coverage run --source=my_package setup.py test
+  - coveralls
