@@ -1,4 +1,4 @@
-import subprocess, platform
+import subprocess as sp
 
 def inc(x):
     return x + 1
@@ -11,11 +11,11 @@ def test_ok():
     
     
 def pingOk(sHost):
-    try:
-        output = subprocess.check_output("ping -{} 1 {}".format('n' if platform.system().lower()=="windows" else 'c', sHost), shell=True)
-    except Exception, e:
+    status,result = sp.getstatusoutput("ping -c1 -w2 " + str(pop))
+    if status == 0:
+        return True
+    else:
         return False
-    return True
 
 def test_ping_google():
 	assert pingOk("8.8.8.8")
