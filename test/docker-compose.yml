@@ -1,5 +1,7 @@
+version: "3.8"
 services:
-  asterisk:
+
+  myservice:
     image: andrius/asterisk
     volumes:
       - test/docker-compose.yml:/etc/asterisk/hello.world 
