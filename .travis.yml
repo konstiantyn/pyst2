@@ -21,6 +21,7 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
 
+  - pwd
   - docker --version
   - docker-compose --version
   - docker-compose -f test/docker-compose.yml up -d

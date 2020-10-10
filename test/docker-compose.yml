@@ -2,4 +2,4 @@ services:
   asterisk:
     image: andrius/asterisk
     volumes:
-      - test/docker-compose.yml:/etc/asterisk/hello.world 
+      - $PWD/test/docker-compose.yml:/etc/asterisk/hello.world 
