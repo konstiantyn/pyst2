@@ -8,11 +8,17 @@ python:
 #  - "3.8"
 #  - "3.8-dev"  # 3.8 development branch
 #  - "nightly"  # nightly build
+
+services:
+  - docker
+
+before_install:
+  - docker-compose -f test/docker-compose.yml up -d
+
+
 # command to install dependencies
 install:
-  - pwd
-  - ls -la
-  - pip install $PWD
+  - pip install .
 # command to run tests
 script:
   - pytest
