@@ -11,7 +11,7 @@ def test_ok():
     
     
 def pingOk(sHost):
-    status,result = sp.getstatusoutput("ping -c1 -w2 " + str(pop))
+    status,result = sp.getstatusoutput("ping -c1 -w2 " + str(sHost))
     if status == 0:
         return True
     else:
