@@ -10,6 +10,8 @@ python:
 #  - "nightly"  # nightly build
 # command to install dependencies
 install:
+  - pwd
+  - ls -la
   - pip install .
 # command to run tests
 script:
