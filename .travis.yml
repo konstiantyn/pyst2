@@ -35,8 +35,8 @@ install:
 
 # command to run tests
 script:
-  - pytest --cov=mymul .
+  - pytest
 
-after_success:
-  - coverage run --source=my_package setup.py test
-  - coveralls
+#after_success:
+#  - coverage run --source=my_package setup.py test
+#  - coveralls
