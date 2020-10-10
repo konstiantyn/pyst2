@@ -3,3 +3,12 @@ services:
     image: andrius/asterisk
     volumes:
       - $PWD/test/docker-compose.yml:/etc/asterisk/hello.world 
+    networks:
+      mynet:
+        ipv4_address: 172.25.0.101
+networks:
+  mynet:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 172.25.0.0/24

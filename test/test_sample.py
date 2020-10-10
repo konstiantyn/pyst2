@@ -19,3 +19,6 @@ def pingOk(sHost):
 
 def test_ping_google():
 	assert pingOk("8.8.8.8")
+	
+def test_ping_asterisk():
+    assert pingOk("172.25.0.101")
