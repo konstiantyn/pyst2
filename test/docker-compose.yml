@@ -2,7 +2,7 @@ services:
   asterisk:
     image: andrius/asterisk
     volumes:
-      - $PWD/test/docker-compose.yml:/etc/asterisk/hello.world 
+      - $PWD/test/support/etc/asterisk/manager.conf:/etc/asterisk/manager.conf
     networks:
       mynet:
         ipv4_address: 172.25.0.101
