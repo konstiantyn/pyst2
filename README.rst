@@ -1,6 +1,12 @@
 pyst2: A Python Interface to Asterisk
 =====================================
 
+.. image:: https://coveralls.io/repos/github/invitecomm/pyst2/badge.svg?branch=develop
+	:target: https://coveralls.io/github/invitecomm/pyst2?branch=develop
+
+.. image:: https://travis-ci.org/invitecomm/pyst2.svg?branch=develop
+    :target: https://travis-ci.org/invitecomm/pyst2
+    
 .. image:: https://img.shields.io/pypi/v/pyst2.svg
     :alt: pyst2 Release
     :target: https://pypi.python.org/pypi/pyst2
