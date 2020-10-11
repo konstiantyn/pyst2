@@ -24,20 +24,21 @@ before_install:
   #- pwd
   #- docker --version
   #- docker-compose --version
-  - ifconfig -a
+  #- ifconfig -a
   - docker-compose -f test/docker-compose.yml up -d
 
 
 # command to install dependencies
 install:
   - pip install .
-  - pip install coveralls 
+  - pip install coverage 
 #  - pip install pytest-cov
 
 # command to run tests
 script:
-  - pytest
-
+  #- pytest
+  - coverage run
+  
 #after_success:
 #  - coverage run --source=my_package setup.py test
 #  - coveralls
