@@ -1,4 +1,4 @@
-import subprocess as sp
+import os
 
 def inc(x): # pragma: no cover
     return x + 1
