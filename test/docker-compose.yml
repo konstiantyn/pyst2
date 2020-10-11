@@ -6,6 +6,8 @@ services:
     networks:
       mynet:
         ipv4_address: 172.25.0.101
+    ports:
+      - 5038
 networks:
   mynet:
     driver: bridge

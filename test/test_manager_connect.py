@@ -1,8 +1,9 @@
 import asterisk.manager
 
+import asterisk.manager
+
 manager = asterisk.manager.Manager()
-try:
-  manager.connect("172.25.0.101")
-  manager.login('pyst2', '5kcn4MCVTk6qCrdq')
-  
-  assert manager.connected()
+manager.connect("localhost")
+manager.login('pyst2', '5kcn4MCVTk6qCrdq')
+
+assert manager.connected()
