@@ -76,7 +76,7 @@ EOL = '\r\n'
 
 class ManagerMsg(object):
     """A manager interface message"""
-    def __init__(self, response):
+    def __init__(self, response): # pragma: no cover
         # the raw response, straight from the horse's mouth:
         self.response = response
         self.data = ''
