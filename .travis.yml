@@ -31,7 +31,7 @@ before_install:
 # command to install dependencies
 install:
   - pip install .
-  - pip install coverage 
+  - pip install coverage coveralls
 #  - pip install pytest-cov
 
 # command to run tests
@@ -40,6 +40,6 @@ script:
   - coverage run --source asterisk -m pytest 
   
 after_success:
-   - coverage report -m
+  - coverage report -m
+  - coveralls
 #  - coverage run --source=my_package setup.py test
-#  - coveralls
