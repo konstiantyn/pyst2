@@ -39,6 +39,7 @@ script:
   #- pytest
   - coverage run -m pytest
   
-#after_success:
+after_success:
+   - coverage report -m
 #  - coverage run --source=my_package setup.py test
 #  - coveralls
