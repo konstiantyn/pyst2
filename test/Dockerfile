@@ -7,7 +7,7 @@ MAINTAINER Andrius Kairiukstis <andrius@kairiukstis.com>
 RUN apk add --update \
       asterisk \
       asterisk-sample-config \
-&& asterisk -U asterisk \
+&& asterisk -U root \
 && sleep 5 \
 && pkill -9 asterisk \
 && pkill -9 astcanary \
