@@ -2,7 +2,7 @@ services:
   asterisk:
     build:
       context: .
-      dockerfile: test/Dockerfile
+      dockerfile: /home/ec2-user/pyst2/test/Dockerfile
       args:
         python: $TRAVIS_PYTHON_VERSION
 #    image: andrius/asterisk
