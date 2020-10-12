@@ -34,7 +34,7 @@ install:
 # command to run tests
 script:
   #- pytest
-  - coverage run --source asterisk -m pytest test_sample.py
+  - coverage run --source asterisk -m pytest
   
 after_success:
   - coverage report -m

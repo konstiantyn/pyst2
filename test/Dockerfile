@@ -7,7 +7,7 @@ MAINTAINER Andrius Kairiukstis <andrius@kairiukstis.com>
 RUN apk add --update \
       asterisk \
       asterisk-sample-config \
-&& asterisk -U root \
+&& asterisk -U asterisk \
 && sleep 5 \
 && pkill -9 asterisk \
 && pkill -9 astcanary \
@@ -21,7 +21,7 @@ RUN apk add --update \
            /tmp/* \
            /var/tmp/*
            
-EXPOSE 5060/udp 5060/tcp
+EXPOSE 5038/tcp
 VOLUME /var/lib/asterisk/sounds /var/lib/asterisk/keys /var/lib/asterisk/phoneprov /var/spool/asterisk /var/log/asterisk
 
 ADD docker-entrypoint.sh /docker-entrypoint.sh
