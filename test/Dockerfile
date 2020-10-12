@@ -20,6 +20,8 @@ RUN apk add --update \
 &&  rm -rf /var/cache/apk/* \
            /tmp/* \
            /var/tmp/*
+           
+RUN pip install /var/lib/asterisk/agi-bin/.
 
 EXPOSE 5060/udp 5060/tcp
 VOLUME /var/lib/asterisk/sounds /var/lib/asterisk/keys /var/lib/asterisk/phoneprov /var/spool/asterisk /var/log/asterisk
