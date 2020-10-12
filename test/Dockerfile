@@ -27,4 +27,5 @@ VOLUME /var/lib/asterisk/sounds /var/lib/asterisk/keys /var/lib/asterisk/phonepr
 ADD $PWD/test/docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+#ENTRYPOINT ["/docker-entrypoint.sh"]
+ENTRYPOINT ["/bin/bash"]
