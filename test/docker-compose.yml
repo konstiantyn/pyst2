@@ -1,6 +1,11 @@
+build:
+  context: .
+  dockerfile: test/Dockerfile
+  args:
+    python: $TRAVIS_PYTHON_VERSION
 services:
   asterisk:
-    image: andrius/asterisk
+#    image: andrius/asterisk
     volumes:
       - $PWD/test/support/etc/asterisk/manager.conf:/etc/asterisk/manager.conf
     networks:
