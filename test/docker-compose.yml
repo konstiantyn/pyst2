@@ -1,5 +1,10 @@
 services:
   asterisk:
+    build:
+      context: .
+      dockerfile: test/Dockerfile
+      args:
+        python: $TRAVIS_PYTHON_VERSION
 #    image: andrius/asterisk
     volumes:
       - $PWD/test/support/etc/asterisk/manager.conf:/etc/asterisk/manager.conf
@@ -8,11 +13,6 @@ services:
         ipv4_address: 172.25.0.101
     ports:
       - 5038
-build:
-  context: .
-  dockerfile: test/Dockerfile
-  args:
-    python: $TRAVIS_PYTHON_VERSION
 networks:
   mynet:
     driver: bridge
