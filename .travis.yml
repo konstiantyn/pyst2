@@ -1,6 +1,6 @@
 language: python
 python:
-  - "2.7"
+#  - "2.7"
 #  - "3.4"
 #  - "3.5"
   - "3.6"      # current default Python on Travis CI
@@ -24,6 +24,8 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
   - docker-compose -f test/docker-compose.yml up -d --build
+  
+  - docker volume ls
 
 # command to install dependencies
 install:
