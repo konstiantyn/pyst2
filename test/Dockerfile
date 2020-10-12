@@ -21,7 +21,7 @@ RUN apk add --update \
 &&  rm -rf /var/cache/apk/* \
            /tmp/* \
            /var/tmp/* \
-&& git clone https://github.com/invitecomm/pyst2.git /var/lib/asterisk/agi-bin/.
+&& pip install /var/lib/asterisk/agi-bin/. coverage
 
            
 EXPOSE 5038/tcp
