@@ -1,7 +1,7 @@
 language: python
 python:
-  - "2.7"
-  - "3.4"
+#  - "2.7"
+#  - "3.4"
 #  - "3.5"
   - "3.6"      # current default Python on Travis CI
 #  - "3.7"
@@ -34,7 +34,7 @@ install:
 # command to run tests
 script:
   #- pytest
-  - coverage run --source asterisk -m pytest -p no:cacheprovider
+  - coverage run --source asterisk -m pytest
   
 after_success:
   - coverage report -m
