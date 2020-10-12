@@ -34,7 +34,7 @@ install:
 # command to run tests
 script:
   #- pytest
-  - coverage run --source asterisk -m pytest
+  - coverage run --source asterisk -m pytest -o cache_dir=/dev/null
   
 after_success:
   - coverage report -m
