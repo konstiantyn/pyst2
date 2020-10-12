@@ -21,12 +21,12 @@ RUN apk add --update \
 &&  rm -rf /var/cache/apk/* \
            /tmp/* \
            /var/tmp/* \
-&& pip install /var/lib/asterisk/agi-bin coverage
-
            
 EXPOSE 5038/tcp
 VOLUME /var/lib/asterisk/sounds /var/lib/asterisk/keys /var/lib/asterisk/phoneprov /var/spool/asterisk /var/log/asterisk
 
 ADD docker-entrypoint.sh /docker-entrypoint.sh
+
+RUN pip install /var/lib/asterisk/agi-bin coverage
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
