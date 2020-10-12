@@ -1,49 +1,32 @@
 language: python
 python:
-  - "2.7-alpine"
-  - "3.4-alpine"
-  - "3.5-alpine"
-  - "3.6-alpine"  # current default Python on Travis CI
-  - "3.7-alpine"
-  - "3.8-alpine"
+  - "2.7"
+  - "3.4"
+  - "3.5"
+  - "3.6"      # current default Python on Travis CI
+  - "3.7"
+  - "3.8"
+# We can't realistically run dev or nightly branches
 #  - "3.8-dev"  # 3.8 development branch
 #  - "nightly"  # nightly build
 
-#env:
-#  - DOCKER_COMPOSE_VERSION=1.27.4
+env:
+  - DOCKER_COMPOSE_VERSION=1.27.4
 
-#services:
-#  - docker
+services:
+  - docker
 
 before_install:
-#  - sudo rm /usr/local/bin/docker-compose
-#  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-#  - chmod +x docker-compose
-#  - sudo mv docker-compose /usr/local/bin
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
 
   #- pwd
   #- docker --version
   #- docker-compose --version
   #- ifconfig -a
-#  - docker-compose -f test/docker-compose.yml up -d
-
-
-  - apk add --update asterisk  asterisk-sample-config
-  - asterisk -U root
-  - sleep 5
-  - asterisk -V
-#&& pkill -9 asterisk \
-#&& pkill -9 astcanary \
-#&& sleep 2 \
-#&& rm -rf /var/run/asterisk/* \
-#&& mkdir -p /var/spool/asterisk/fax \
-#&& chown -R asterisk: /var/spool/asterisk/fax \
-#&& truncate -s 0 /var/log/asterisk/messages \
-#                 /var/log/asterisk/queue_log \
-#&&  rm -rf /var/cache/apk/* \
-#           /tmp/* \
-#           /var/tmp/*
-
+  - docker-compose -f test/docker-compose.yml up -d
 
 # command to install dependencies
 install:
