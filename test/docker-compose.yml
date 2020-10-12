@@ -13,7 +13,7 @@ services:
         source: $PWD
         target: /var/lib/asterisk/agi-bin
         bind:
-          propagation: shared
+          propagation: rshared
     networks:
       mynet:
         ipv4_address: 172.25.0.101
