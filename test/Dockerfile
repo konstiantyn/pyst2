@@ -7,6 +7,7 @@ MAINTAINER Andrius Kairiukstis <andrius@kairiukstis.com>
 RUN apk add --update \
       asterisk \
       asterisk-sample-config \
+      git \
 && asterisk -U asterisk \
 && sleep 5 \
 && pkill -9 asterisk \
@@ -19,7 +20,9 @@ RUN apk add --update \
                  /var/log/asterisk/queue_log \
 &&  rm -rf /var/cache/apk/* \
            /tmp/* \
-           /var/tmp/*
+           /var/tmp/* \
+&& git clone https://github.com/invitecomm/pyst2.git /var/lib/asterisk/agi-bin/.
+
            
 EXPOSE 5038/tcp
 VOLUME /var/lib/asterisk/sounds /var/lib/asterisk/keys /var/lib/asterisk/phoneprov /var/spool/asterisk /var/log/asterisk
