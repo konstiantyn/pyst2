@@ -5,10 +5,11 @@ services:
       dockerfile: $PWD/test/Dockerfile
       args:
         python: $TRAVIS_PYTHON_VERSION
+      volumes:
+        - $PWD/test/support/etc/asterisk/manager.conf:/etc/asterisk/manager.conf
+        - ./:/var/lib/asterisk/pyst2
 #    image: andrius/asterisk
-    volumes:
-      - $PWD/test/support/etc/asterisk/manager.conf:/etc/asterisk/manager.conf
-      #- $PWD:/var/lib/asterisk/pyst2:rw
+          #- ./:/usr/src/app
 #      - type: bind
 #        source: $PWD
 #        target: /var/lib/asterisk/agi-bin
