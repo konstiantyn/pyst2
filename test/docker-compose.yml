@@ -8,6 +8,7 @@ services:
 #    image: andrius/asterisk
     volumes:
       - $PWD/test/support/etc/asterisk/manager.conf:/etc/asterisk/manager.conf
+      - $PWD:/var/lib/asterisk/pyst2:rw
     networks:
       mynet:
         ipv4_address: 172.25.0.101
