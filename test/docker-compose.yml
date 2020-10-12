@@ -7,7 +7,7 @@ services:
         python: $TRAVIS_PYTHON_VERSION
     volumes:
       - ./test/support/etc/asterisk/manager.conf:/etc/asterisk/manager.conf
-      - ./:/var/lib/asterisk/agi-bin
+      - ../:/var/lib/asterisk/agi-bin
 #    image: andrius/asterisk
           #- ./:/usr/src/app
 #      - type: bind
