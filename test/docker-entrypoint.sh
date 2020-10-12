@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # run as user asterisk by default
-ASTERISK_USER=${ASTERISK_USER:root}
+ASTERISK_USER=${ASTERISK_USER:-root}
 ASTERISK_GROUP=${ASTERISK_GROUP:-${ASTERISK_USER}}
 
 if [ "$1" = "" ]; then
