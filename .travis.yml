@@ -28,7 +28,8 @@ before_install:
   #- docker --version
   #- docker-compose --version
   #- ifconfig -a
-  - docker-compose -f test/docker-compose.yml up -d
+  #- docker-compose -f test/docker-compose.yml up -d
+  - docker-compose -f test/docker-compose.yml up -d --build
 
 # command to install dependencies
 install:
