@@ -21,7 +21,7 @@ RUN apk add --update \
 &&  rm -rf /var/cache/apk/* \
            /tmp/* \
            /var/tmp/* \
-&& pip install /var/lib/asterisk/agi-bin/. coverage
+&& pip install /var/lib/asterisk/agi-bin coverage
 
            
 EXPOSE 5038/tcp
