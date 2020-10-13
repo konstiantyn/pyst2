@@ -8,6 +8,7 @@ services:
     volumes:
       - ./support/etc/asterisk/manager.conf:/etc/asterisk/manager.conf
       - ../:/var/lib/asterisk/agi-bin:ro
+      - ../.coverage:/var/lib/asterisk/agi-bin/.coverage
 #    image: andrius/asterisk
           #- ./:/usr/src/app
 #      - type: bind
