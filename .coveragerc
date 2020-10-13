@@ -24,3 +24,7 @@ ignore_errors = True
 
 [html]
 directory = coverage_html_report
+
+[paths]
+source =
+  asterisk
