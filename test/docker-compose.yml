@@ -1,6 +1,5 @@
 services:
   asterisk:
-    user: 2000:2000
     build:
       context: .
       dockerfile: $PWD/test/Dockerfile
