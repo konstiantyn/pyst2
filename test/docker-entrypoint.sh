@@ -20,8 +20,8 @@ if [ "${ASTERISK_UID}" != "" ] && [ "${ASTERISK_GID}" != "" ]; then
   || exit
 fi
 
-chown -R ${ASTERISK_USER}: /var/log/asterisk \
-                           /var/lib/asterisk \
-                           /var/run/asterisk \
-                           /var/spool/asterisk; \
+# chown -R ${ASTERISK_USER}: /var/log/asterisk \
+#                            /var/lib/asterisk \
+#                            /var/run/asterisk \
+#                            /var/spool/asterisk; \
 exec ${COMMAND}
