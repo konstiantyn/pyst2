@@ -26,6 +26,8 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
   - docker-compose -f test/docker-compose.yml up -d --build
   - docker exec -it test_asterisk_1 sh "/var/lib/asterisk/agi-bin/test/setup.sh"  
+  - docker exec -it test_asterisk_1 sh "whoami"  
+  - whoami
   
 # command to install dependencies
 install:
