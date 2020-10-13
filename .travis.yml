@@ -24,6 +24,8 @@ before_install:
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
+  - sudo echo '' > .coverage
+  - sudo chmod a+rw .coverage
   - docker-compose -f test/docker-compose.yml up -d --build
   #- docker-compose -f test/docker-compose.yml run -d -u travis
   - docker exec -it test_asterisk_1 sh "/var/lib/asterisk/agi-bin/test/setup.sh"  
