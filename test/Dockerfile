@@ -26,7 +26,6 @@ RUN apk add --update \
 EXPOSE 5038/tcp
 VOLUME /var/lib/asterisk/sounds /var/lib/asterisk/keys /var/lib/asterisk/phoneprov /var/spool/asterisk /var/log/asterisk
 
-ADD setup.sh /docker-entrypoint-initdb.d/
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
