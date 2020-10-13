@@ -1,5 +1,6 @@
 services:
   asterisk:
+    user: travis:travis
     build:
       context: .
       dockerfile: $PWD/test/Dockerfile
@@ -27,4 +28,3 @@ networks:
     ipam:
       config:
       - subnet: 172.25.0.0/24
-user: travis
