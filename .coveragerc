@@ -1,6 +1,7 @@
 # .coveragerc to control coverage.py
 [run]
 branch = True
+source = asterisk
 
 [report]
 # Regexes for lines to exclude from consideration
@@ -26,5 +27,4 @@ ignore_errors = True
 directory = coverage_html_report
 
 [paths]
-source =
-  asterisk
+source = asterisk

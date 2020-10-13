@@ -2,7 +2,7 @@
 ARG python
 FROM python:$python-alpine
 
-MAINTAINER Andrius Kairiukstis <andrius@kairiukstis.com>
+MAINTAINER Brian LaVallee <brian.lavallee@invite-comm.jp>
 
 RUN apk add --update \
       asterisk \
