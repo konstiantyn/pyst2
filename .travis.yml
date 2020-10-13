@@ -40,7 +40,7 @@ install:
 # command to run tests
 script:
   #- pytest
-  - coverage run --source ./ -m pytest
+  - coverage run -a --source ./ -m pytest
   #- coverage run -m pytest
   
 after_success:
