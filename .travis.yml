@@ -48,7 +48,7 @@ script:
   
 after_success:
   - sudo chown travis:travis .coverage.asterisk
-  - coverage combine .coverage.asterisk .coverage.travis
+  - coverage combine --append .coverage.asterisk .coverage.travis
   - ls -la
   - coverage report -m
   - coveralls
