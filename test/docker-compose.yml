@@ -2,12 +2,15 @@ services:
   asterisk:
     build:
       context: .
-      dockerfile: $PWD/test/Dockerfile
+      dockerfile: $TRAVIS_BUILD_DIR/test/Dockerfile
       args:
         python: $TRAVIS_PYTHON_VERSION
+    environment:
+      - TRAVIS_BUILD_DIR=$TRAVIS_BUILD_DIR
     volumes:
+      # Mount travis build directory.  Must be same path for coverage to work!
+      - $TRAVIS_BUILD_DIR:$TRAVIS_BUILD_DIR:rw
       - ./support/etc/asterisk/manager.conf:/etc/asterisk/manager.conf
-      - ../:/home/travis/build/invitecomm/pyst2:rw
       #- ../.coverage:/var/lib/asterisk/agi-bin/.coverage
 #    image: andrius/asterisk
           #- ./:/usr/src/app
