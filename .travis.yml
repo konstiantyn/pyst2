@@ -35,7 +35,7 @@ install:
 
 # command to run tests
 script:
-  - docker exec -it test_asterisk_1 sh "${$TRAVIS_BUILD_DIR}/test/setup.sh"  
+  - docker exec -it test_asterisk_1 sh "${TRAVIS_BUILD_DIR}/test/setup.sh"  
   - coverage run -a --rcfile=.coveragerc.travis -m pytest
   
 after_success:
