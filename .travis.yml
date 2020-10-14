@@ -19,14 +19,15 @@ services:
 
 before_install:
   #- echo Python Version=$TRAVIS_PYTHON_VERSION
-  - echo $TRAVIS_BUILD_DIR / $TRAVIS_BRANCH
+  #- echo $TRAVIS_BUILD_DIR / $TRAVIS_BRANCH
+  
+  # Update docker-compose version
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
-  #- sudo echo '' > .coverage
-  #- sudo chmod a+rw .coverage
-  - docker-compose -f test/docker-compose.yml up -d --build
+  
+  - docker-compose -f test/docker-compose.yml up -d
   #- docker-compose -f test/docker-compose.yml run -d -u travis
   #- docker exec -it test_asterisk_1 sh "whoami"  
   #- whoami
@@ -41,17 +42,17 @@ install:
 
 # command to run tests
 script:
-  #- pytest
   - docker exec -it test_asterisk_1 sh "/home/travis/build/invitecomm/pyst2/test/setup.sh"  
-  - sudo chown travis:travis .coverage.asterisk
-  - sudo chmod 666 .coverage.asterisk
   - coverage run -a --rcfile=.coveragerc.travis -m pytest
   #- coverage run -m pytest
   
 after_success:
-  #- coverage combine --append .coverage.asterisk .coverage.travis 
-  - ls -la
-  #- pwd
-  - coverage report -mi
+  # Make .coverage file for asterisk side readable
+  - sudo chown travis:travis .coverage.asterisk
+  - sudo chmod 666 .coverage.asterisk
+  # Combine .coverage files for asterisk and travis
+  - coverage combine --append .coverage.asterisk .coverage.travis
+  # Print coverage report data
+  - coverage report -m
+  # Submit coverage to coveralls.io
   - coveralls
-#  - coverage run --source=my_package setup.py test
