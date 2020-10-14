@@ -1,5 +1,5 @@
 #!/bin/sh
-pip install /var/lib/asterisk/agi-bin coverage
+pip install /var/lib/asterisk/agi-bin coverage coveralls pytest
 cd /var/lib/asterisk/agi-bin/
 chmod a+rw .coverage
 chown asterisk:asterisk .coverage
