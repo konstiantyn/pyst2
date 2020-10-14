@@ -47,7 +47,7 @@ script:
   #- coverage run -m pytest
   
 after_success:
-  - sudo chown travis:travis .coverage
+  #- sudo chown travis:travis .coverage
   - ls -la
   - coverage report -m
   - coveralls

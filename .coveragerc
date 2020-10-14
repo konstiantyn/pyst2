@@ -1,6 +1,7 @@
 # .coveragerc to control coverage.py
 [run]
 branch = True
+data_file = .coverage.asterisk
 #source = asterisk
 
 [report]
