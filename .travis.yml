@@ -42,7 +42,7 @@ install:
 # command to run tests
 script:
   #- pytest
-  - docker exec -it test_asterisk_1 sh "/var/lib/asterisk/agi-bin/test/setup.sh"  
+  - docker exec -it test_asterisk_1 sh "/home/travis/build/invitecomm/pyst2/test/setup.sh"  
   #- coverage run --rcfile=.coveragerc.travis --source ./ -m pytest
   #- coverage run -m pytest
   
