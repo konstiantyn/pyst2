@@ -17,8 +17,6 @@ services:
   - docker
 
 before_install:
-  - echo $TRAVIS_BUILD_DIR
-
   # Update docker-compose version
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
@@ -27,6 +25,8 @@ before_install:
   
   # Build asterisk on python:${$TRAVIS_PYTHON_VERSION}-alpine
   - docker-compose -f test/docker-compose.yml up -d
+  
+  - echo $TRAVIS_APP_HOST
 
 install:
   # Install package and dependencies

@@ -4,12 +4,9 @@ FROM python:$python-alpine
 
 MAINTAINER Brian LaVallee <brian.lavallee@invite-comm.jp>
 
-RUN apk add --update \
-      asterisk \
-      asterisk-sample-config \
-      git \
-      bash \
-&& asterisk -U asterisk \
+# Asterisk installation (based on andrius/asterisk)
+RUN apk add --update asterisk asterisk-sample-config git bash
+RUN asterisk -U asterisk \
 && sleep 5 \
 && pkill -9 asterisk \
 && pkill -9 astcanary \
