@@ -51,6 +51,6 @@ after_success:
   - sudo chmod 666 .coverage
   #- coverage combine --append .coverage.asterisk 
   - ls -la
-  - coverage report -m
+  - coverage report -mi
   - coveralls
 #  - coverage run --source=my_package setup.py test
