@@ -49,7 +49,7 @@ script:
   #- coverage run -m pytest
   
 after_success:
-  - coverage combine --append .coverage.asterisk .coverage.travis 
+  #- coverage combine --append .coverage.asterisk .coverage.travis 
   - ls -la
   #- pwd
   - coverage report -mi
