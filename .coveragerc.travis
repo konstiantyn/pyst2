@@ -1,7 +1,7 @@
 # .coveragerc to control coverage.py
 [run]
 branch = True
-data_file = .coverage.travis
+#data_file = .coverage.travis
 #source = asterisk
 
 [report]

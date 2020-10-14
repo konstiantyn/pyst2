@@ -43,12 +43,12 @@ install:
 script:
   #- pytest
   - docker exec -it test_asterisk_1 sh "/var/lib/asterisk/agi-bin/test/setup.sh"  
-  - coverage run --rcfile=.coveragerc.travis --source ./ -m pytest
+  #- coverage run --rcfile=.coveragerc.travis --source ./ -m pytest
   #- coverage run -m pytest
   
 after_success:
-  - sudo chown travis:travis .coverage.asterisk
-  - coverage combine --append .coverage.asterisk 
+  - sudo chown travis:travis .coverage
+  #- coverage combine --append .coverage.asterisk 
   - ls -la
   - coverage report -m
   - coveralls
