@@ -1,6 +1,6 @@
 #!/bin/sh
-pip install /home/travis/build/invitecomm/pyst2 coverage coveralls pytest
-cd /home/travis/build/invitecomm/pyst2
+pip install ${TRAVIS_BUILD_DIR} coverage
+cd ${TRAVIS_BUILD_DIR}
 #chmod a+rw .coverage
 #chown asterisk:asterisk .coverage
 coverage run --rcfile=.coveragerc.asterisk test/other.py
