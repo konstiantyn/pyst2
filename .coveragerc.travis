@@ -1,8 +1,8 @@
 # .coveragerc to control coverage.py
 [run]
 branch = True
-#data_file = .coverage.travis
-#source = asterisk
+data_file = .coverage.travis
+source = ./
 
 [report]
 # Regexes for lines to exclude from consideration

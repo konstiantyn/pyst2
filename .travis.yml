@@ -43,15 +43,15 @@ install:
 script:
   #- pytest
   - docker exec -it test_asterisk_1 sh "/home/travis/build/invitecomm/pyst2/test/setup.sh"  
-  - sudo chown travis:travis .coverage
-  - sudo chmod 666 .coverage
-  - coverage run -a --source ./ -m pytest
+  - sudo chown travis:travis .coverage.asterisk
+  - sudo chmod 666 .coverage.asterisk
+  - coverage run -a --rcfile=.coveragerc.travis -m pytest
   #- coverage run -m pytest
   
 after_success:
-  #- coverage combine --append .coverage.asterisk 
+  - coverage combine --append .coverage.asterisk .coverage.travis 
   - ls -la
-  - pwd
+  #- pwd
   - coverage report -mi
   - coveralls
 #  - coverage run --source=my_package setup.py test
