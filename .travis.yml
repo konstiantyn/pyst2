@@ -43,7 +43,7 @@ install:
 script:
   #- pytest
   - docker exec -it test_asterisk_1 sh "/home/travis/build/invitecomm/pyst2/test/setup.sh"  
-  #- coverage run --rcfile=.coveragerc.travis --source ./ -m pytest
+  - coverage run -a --source ./ -m pytest
   #- coverage run -m pytest
   
 after_success:
