@@ -11,6 +11,7 @@ services:
       # Mount travis build directory.  Must be same path for coverage to work!
       - $TRAVIS_BUILD_DIR:$TRAVIS_BUILD_DIR:rw
       - ./support/etc/asterisk/manager.conf:/etc/asterisk/manager.conf
+      - ./support/etc/asterisk/asterisk.conf:/etc/asterisk/asterisk.conf
       #- ../.coverage:/var/lib/asterisk/agi-bin/.coverage
 #    image: andrius/asterisk
           #- ./:/usr/src/app
