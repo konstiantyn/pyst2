@@ -25,7 +25,7 @@ before_install:
 
   # Set astagidir on the asterisk side
   - echo \[directories\] > test/support/etc/asterisk/asterisk.conf
-  - echo astagidir\ \=\> >> ${TRAVIS_BUILD_DIR} test/support/etc/asterisk/asterisk.conf
+  - echo astagidir\ \=\> ${TRAVIS_BUILD_DIR} >> test/support/etc/asterisk/asterisk.conf
 
 install:
   # Install package and dependencies
