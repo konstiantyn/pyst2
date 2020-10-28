@@ -24,4 +24,6 @@ fi
 #                            /var/lib/asterisk \
 #                            /var/run/asterisk \
 #                            /var/spool/asterisk; \
+PIP="pip install /home/ec2-user/pyst2"
+exec ${PIP}
 exec ${COMMAND}
