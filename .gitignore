@@ -19,3 +19,5 @@ __pycache__/
 
 # Auto-generated files.
 MANIFEST
+/htmlcov/
+/.idea/
